@@ -1,0 +1,14 @@
+<template name="home">
+<div class="col-md-12">
+	<h2>Home page we will talk about what this app is</h2>
+	<h1>Choco-factory</h1>
+	<h3>List of our Products:</h3><br>
+	<div class = "col-md-12">
+{{#each products}}
+		<div class = "col-md-3" >{{> thisProd}}</div>
+		<div class = "col-md-1"></div>
+{{/each}}
+</div>
+
+</div>
+</template>

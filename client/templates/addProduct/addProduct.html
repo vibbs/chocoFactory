@@ -1,0 +1,42 @@
+<template name = "addProduct">
+
+Admin: Add product details here
+
+
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+<div>
+	Name:<input id="name" type="text" placeholder="Name" /><br>
+	Description:<input id="desc" type="textarea" placeholder="Description" /><br>
+
+	Prize:<input id="prize" type="textarea" placeholder="Prize" /><br><br>
+
+	Quantity : <input id="qty" type="textarea" placeholder="Qty" /><br>
+	
+	<br>Add product image<br>
+	<input id="media" type="file" accept="image/gif, image/jpeg, image/png" onchange="readURL(this);" /><br>
+	<img id="img_display" src="#" alt = ""/><br>
+	
+	<button class="submitProduct">Submit</button>
+</div>
+
+<script type="text/javascript">
+	function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#img_display')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+</script>
+
+</template>

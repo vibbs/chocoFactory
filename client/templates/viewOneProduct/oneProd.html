@@ -1,0 +1,32 @@
+<template name = "oneProd">
+
+<div id="container_box">
+{{help}}
+	Name : {{name}}<br>
+	Description : {{description}}<br>
+	Qty : {{qty}}<br>
+	Cost : {{prize}}<br>
+	<br>
+	Qty Selected : {{count}}<br>
+	{{#if media_file_id}}
+		
+		
+		 <a href="{{media_file_id.url}}" target="_blank"><img src="{{media_file_id.url}}" alt="" class="thumbnail" style="width:150px;height:200px;"/></a>
+		 
+	
+
+		{{/if}}
+
+	<button class="minus"><i class="fa fa-minus-square"></i>
+
+	</button>
+
+
+	<button class="plus"><i class="fa fa-plus-square-o"></i>
+
+	</button>
+
+</div>
+
+
+</template> 

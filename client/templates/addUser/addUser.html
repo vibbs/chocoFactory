@@ -1,0 +1,38 @@
+<template name = "addUser" > 
+List Of all the registered users : <br>
+<table width="100%">
+<tr>
+	<td>Username Or emailID :</td>
+	<td>Role :</td>
+</tr>
+{{#each Users}}
+	{{> allusers}}<br>
+{{/each}}
+
+</table>
+<br>
+	Email ID:<input id="email" type="text" placeholder="Email" />
+	Password:<input id="pass" type="textarea" placeholder="Password" />
+	Role:<select id= "role">
+		 <option  value = "admin">Admin</option>
+		 <option  value = "manager">Manager</option>
+		 <option  value = "chef">Chef</option>
+		 <option  value = "customer">Customer</option>
+	</select>
+
+
+	<button class="submitUser">AddUser</button>
+
+</template>
+
+
+<template name = "allusers" > 
+{{#each emails}}
+		{{ > allemails}}
+{{/each}}		
+	<td>{{profile.role}}</td>
+</template>
+
+<template name = "allemails" > 
+		<td>{{address}}</td>
+</template>

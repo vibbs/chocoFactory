@@ -1,0 +1,28 @@
+<template name = "customMenu">
+<table style="width:100%">
+<tr>
+	<td>Name</td>
+	<td>Prize</td>
+	<td>QtyNeeded</td>
+	<td>Special Note</td>
+	<td>Click to Order</td>
+</tr>
+
+{{#each menuItem}}
+  <tr>
+{{> item}}
+</tr>
+{{/each}}
+
+</table>
+
+</template>
+
+<template name = "item">
+		<td> {{name}} </td>
+		<td> {{prize}} </td>
+		<td><input type="text" class="qty"> </td>
+		<td><input type="text" class="desc"> </td>
+		<td><button class="shop">Shop</button> <br></td>
+
+</template>

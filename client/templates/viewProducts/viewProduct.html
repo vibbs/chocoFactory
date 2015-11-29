@@ -1,0 +1,58 @@
+<template name = "viewProduct">
+
+
+<div class = "col-md-12">
+{{#each products}}
+		<div class = "col-md-3" >{{> allProducts}}</div>
+		<div class = "col-md-1"></div>
+{{/each}}
+</div>
+<div class = "col-md-12"></div>
+
+<script type="text/javascript">
+	function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#img_display')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+</script>
+
+
+
+</template>
+
+<template name = "allProducts">
+<div id="container_box">
+{{help}}
+	Name : <textarea id="name"> {{name}} </textarea><br>
+	Description : <textarea id="desc">{{description}}</textarea><br>
+	InStock : <textarea id="qty">{{qty}}</textarea><br>
+	Cost : <textarea id="prize">{{prize}}</textarea><br>
+
+	{{#if media_file_id}}
+        
+        
+         <a href="{{media_file_id.url}}" target="_blank"><img src="{{media_file_id.url}}" alt="" class="thumbnail" style="width:150px;height:200px;"/></a>
+         
+    
+
+        {{/if}}
+
+	<button  style="padding-left: 20px;" class ="saveProd"><i class="fa fa-floppy-o"></i></button>
+
+
+</div>
+
+
+</template>
+
