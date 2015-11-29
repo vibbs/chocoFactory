@@ -1,0 +1,60 @@
+<template name = "prodSch" >
+<h2>Production Schedule</h2>
+{{#if done}}
+
+{{/if}}
+
+<table width="100%">
+
+<tr>
+	<td>Name</td>
+	<td>QtyNeeded</td>
+	<td>Special Note</td>
+	<td>Done Processing</td>
+	<td>Remove</td>
+</tr>
+
+{{#each orders}}
+	{{ > eachorder2}}
+{{/each}}
+
+</table>
+
+</template>
+
+
+<template name = "eachorder2">
+<tr>
+<td>(Order ID :: {{orderID}} )</td>
+	<td>---</td>
+	<td>---</td>
+	<td>{{done}}<button class="status">Change Status</button></td>
+	<td><button class="del"> <i class="fa fa-times"></i></button> </td>
+
+</tr>
+	{{#each products}}
+ 		{{> eachProduct2}}
+ {{/each}}
+</template>
+
+
+<template name = "eachProduct2">
+
+{{#if custom}}
+	<tr>
+	<td>{{nam}}</td>
+	<td>{{qty}}</td>
+	<td>{{note}}</td>
+
+	</tr>
+{{else}}
+
+	<tr>
+	<td>{{nam2}}</td>
+	<td>{{qty}}</td>
+	<td>{{note}}</td>
+	</tr>
+
+{{/if}}
+
+</template>

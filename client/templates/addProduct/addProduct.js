@@ -23,8 +23,8 @@ Template.addProduct.events({
 
         console.log(name);
         console.log(desc);
-        console.log(prize);
-        console.log(qty);
+        console.log(parseInt(prize));
+        console.log(parseInt(qty));
 		
         var fileObj;
         //story object: makes better data structure:
@@ -51,7 +51,7 @@ Template.addProduct.events({
 
        
        if(bool) 
-       		Meteor.call('insertProduct',name,desc,prize, qty, fileObj); 
+       		Meteor.call('insertProduct',name,desc,parseInt(prize),parseInt(qty), fileObj); 
   
         Router.go('viewProduct');
 

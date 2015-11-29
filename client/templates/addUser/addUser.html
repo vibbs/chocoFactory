@@ -1,12 +1,13 @@
 <template name = "addUser" > 
 List Of all the registered users : <br>
-<table width="100%">
+<table width="50%">
 <tr>
 	<td>Username Or emailID :</td>
 	<td>Role :</td>
 </tr>
+
 {{#each Users}}
-	{{> allusers}}<br>
+	{{> allusers}}
 {{/each}}
 
 </table>
@@ -27,12 +28,18 @@ List Of all the registered users : <br>
 
 
 <template name = "allusers" > 
+<tr>
+{{#if isAdmin}}
 {{#each emails}}
 		{{ > allemails}}
 {{/each}}		
+{{/if}}
 	<td>{{profile.role}}</td>
+
+	</tr>
 </template>
 
 <template name = "allemails" > 
+
 		<td>{{address}}</td>
 </template>

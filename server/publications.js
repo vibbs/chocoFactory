@@ -5,6 +5,11 @@ Meteor.publish('media', function(){
 	return Media.find();
 });
 
+Meteor.publish('production', function(){
+	return Production.find();
+});
+
+
 Meteor.publish('menu', function(){
 	return Menu.find();
 });

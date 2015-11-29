@@ -1,9 +1,7 @@
-<template name = "checkOut">
-Your cart Items :
-This order : {{help}}
-<button class="ship">Checkout <i class="fa fa-credit-card"></i></button>
+<template name = "userDash">
+You Older History:
+<table width="100%">
 
-<table style="width:100%">
 <tr>
 	<td>Name</td>
 	<td>Prize</td>
@@ -11,18 +9,26 @@ This order : {{help}}
 	<td>Special Note</td>
 </tr>
  
- {{#each products}}
- 		{{> eachProd}}
+ {{#each order}}
+ 	
+
+ 		{{> eachorder}}
+ 	
  {{/each}}
 
- </table>
+</table>
+</template>
 
+<template name = "eachorder">
+<tr>(Order ID :: {{orderID}} )</tr>
+	{{#each products}}
+ 		{{> eachProd}}
+ {{/each}}
 </template>
 
 
-
-<template name = "eachProd">
-{{name}}
+<template name = "eachProduct">
+{{nam}}
 {{#if custom}}
 	<tr>
 	<td>{{nam}}</td>
@@ -40,4 +46,7 @@ This order : {{help}}
 	</tr>
 
 {{/if}}
+
 </template>
+
+
