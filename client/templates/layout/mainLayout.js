@@ -16,3 +16,14 @@ Template.mainLayout.events({
 	}
 
 });
+
+
+if(Meteor.isClient){
+Meteor.subscribe('product');
+		Meteor.subscribe('media');
+		Meteor.subscribe('users');
+		Meteor.subscribe('menu');
+		Meteor.subscribe('order');
+		Meteor.subscribe('production');
+		Meteor.subscribe('supply');
+	}

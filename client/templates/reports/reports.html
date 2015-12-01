@@ -1,3 +1,16 @@
+<template name = "reports">
+<h1>All Reports</h1>
+<ul>
+	<li><a href="{{pathFor 'salesReport'}}"
+			class="{{isActiveRoute regex='salesReport'}}">SalesReport</a></li>
+						<li><a href="{{pathFor 'customerReport'}}"
+			class="{{isActiveRoute regex='customerReport'}}">CustomerReport</a></li>
+						<li><a href="{{pathFor 'inventoryReport'}}"
+			class="{{isActiveRoute regex='inventoryReport'}}">InventoryReport</a></li>
+
+</ul>
+</template>
+
 <template name = "salesReport">
 <h1>Sales Report : </h1>
 </template>
