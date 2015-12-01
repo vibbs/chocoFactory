@@ -1,0 +1,52 @@
+<template name = "supplyOrder">
+<h2>Order new Supplies needed here:</h2>
+
+	Item:<select id= "item">
+		 <option  value = "coco">Coco</option>
+		 <option  value = "sugar">Sugar</option>
+		 <option  value = "syrup">Syrup</option>
+		 <option  value = "wrappers">Wrappers</option>
+	</select>
+	qty<input id="qty" type="nummeric" placeholder="Quantity" />
+	Supplier:<select id= "supplier">
+		 <option  value = "Supplier1">Supplier1</option>
+		 <option  value = "Supplier2">Supplier2</option>
+		 <option  value = "Supplier3">Supplier3</option>
+		 <option  value = "Supplier4">Supplier4</option>
+	</select>
+
+
+	<button class="submitSO">Order</button>
+
+<h2>Supply Order list</h2>	
+
+<table width="100%">
+	<tr>
+		<td>SupplyOrder No:</td>
+		<td>Item Ordered</td>
+		<td>qty</td>
+		<td>Supplier</td>
+		<td>Status</td>
+		<td>Remove</td>
+	</tr>
+
+	{{#each so}}
+		{{> eso}}
+	{{/each}}
+</table>	
+
+</template>
+
+
+<template name = "eso">
+<tr>
+	<td>{{_id}}</td>
+	<td>{{item}}</td>
+	<td>{{qty}}</td>
+	<td>{{supplier}}</td>
+	<td>{{rec}}
+	<button class="status">Change Status</button></td>
+	<td><button class="del"> <i class="fa fa-times"></i></button> </td>
+</tr>
+
+</template>

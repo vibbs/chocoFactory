@@ -9,6 +9,10 @@ Meteor.publish('production', function(){
 	return Production.find();
 });
 
+Meteor.publish('supply', function(){
+	return Supply.find();
+});
+
 
 Meteor.publish('menu', function(){
 	return Menu.find();
