@@ -4,6 +4,8 @@ List Of all the registered users : <br>
 <tr>
 	<td>Username Or emailID :</td>
 	<td>Role :</td>
+	<td>First Name :</td>
+	<td>Last Name :</td>
 </tr>
 
 {{#each Users}}
@@ -12,12 +14,17 @@ List Of all the registered users : <br>
 
 </table>
 <br>
+
+	First Name:	<input type="text" id="fname-register" value=""/>
+	Last Name:<input type="text" id="lname-register" value="" autocomplete="off"/>
+
 	Email ID:<input id="email" type="email" placeholder="Email" />
 	Password:<input id="pass" type="textarea" placeholder="Password" />
 	Role:<select id= "role">
 		 <option  value = "admin">Admin</option>
 		 <option  value = "manager">Manager</option>
 		 <option  value = "chef">Chef</option>
+		 <option  value = "employee">Employee</option>
 		 <option  value = "customer">Customer</option>
 	</select>
 
@@ -34,6 +41,8 @@ List Of all the registered users : <br>
 		{{ > allemails}}
 {{/each}}		
 {{/if}}
+<td>{{profile.role}}</td>
+<td>{{profile.role}}</td>
 	<td>{{profile.role}}</td>
 
 	</tr>

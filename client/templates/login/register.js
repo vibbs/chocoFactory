@@ -16,7 +16,10 @@ Template.register.events({
 			profile: {
 				first_name: fname,
 				last_name: lname,
-				accountSetupComplete: false
+				role: "customer",
+                password : password,
+    			orderHistory : [],
+    			currentOrder : null
 			},
 		}, function(error) { // Catch any errors
 			if( error ) {

@@ -20,27 +20,36 @@
 
 			
 			
-			<li class="log">{{> loginButtons}}</li>
-
+		
+		{{#if bool1}}
 			<li ><a href="{{pathFor 'addProduct'}}"
 				class="{{isActiveRoute regex='addProduct'}}">Add Product-Admin</a></li>
+		{{/if}}		
 
+		{{#if bool2}}
 			<li ><a href="{{pathFor 'addUser'}}"
 				class="{{isActiveRoute regex='addUser'}}">Users-Admin</a></li>
+		{{/if}}		
 
+		{{#if bool3}}
 			<li ><a href="{{pathFor 'viewProduct'}}"
 			class="{{isActiveRoute regex='viewProduct'}}">Admin-ViewProducts</a></li>
+		{{/if}}	
 
+		{{#if bool4}}
 			<li ><a href="{{pathFor 'prodSch'}}"
 			class="{{isActiveRoute regex='prodSch'}}">ProductionSchedule</a></li>
+		{{/if}}	
 
+		{{#if bool5}}
 			<li ><a href="{{pathFor 'supplyOrder'}}"
 			class="{{isActiveRoute regex='supplyOrder'}}">SupplyOrder-Manager</a></li>
+		{{/if}}	
 
-
+		{{#if bool6}}
 			<li ><a href="{{pathFor 'reports'}}"
 			class="{{isActiveRoute regex='reports'}}">Reports</a></li>
-
+		{{/if}}	
 
 			<li ><a href="{{pathFor 'custView'}}"
 			class="{{isActiveRoute regex='custView'}}">View Products</a></li>
@@ -48,11 +57,17 @@
 			<li ><a href="{{pathFor 'customMenu'}}"
 			class="{{isActiveRoute regex='customMenu'}}">CustomOrder</a></li>
 
+			{{#if currentUser}}
 			<li ><a href="{{pathFor 'userDash'}}"
 			class="{{isActiveRoute regex='userDash'}}">userDash</a></li>
+			{{/if}}
 
+		{{#if bool7}}
 			<li ><a href="{{pathFor 'recipe'}}"
 			class="{{isActiveRoute regex='recipe'}}">Recipe</a></li>
+		{{/if}}	
+
+			<li><a id="sign-out" href="{{pathFor 'login'}}">Login</a></li>
 
 
 			

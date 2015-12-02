@@ -1,3 +1,11 @@
 <template name = "editUser">
+<h2>Welcome : {{currentUser.profile.first_name}}</h2>
+
+Change Details bellow:<br><br>
+	First Name : <textarea id="fname"> {{currentUser.profile.first_name}} </textarea><br>
+	Last Name : <textarea id="lname"> {{currentUser.profile.last_name}} </textarea><br>
+
+	<button class="save">Save</button>
+
 
 </template>

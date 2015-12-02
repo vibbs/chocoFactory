@@ -1,4 +1,4 @@
-
+ 
 Template.addUser.helpers({
 	Users : function(){
 
@@ -29,6 +29,8 @@ Template.allusers.helpers({
 Template.addUser.events({
 	'click .submitUser' : function(event, template){
 		event.preventDefault();
+        var fname = template.find("#fname-register").value;
+        var lname = template.find("#lname-register").value;
         var email = template.find("#email").value;
         var password = template.find("#pass").value;
         var role = template.find('#role').value;
@@ -47,6 +49,8 @@ Template.addUser.events({
     		email: email,
     		password: password,
     		profile : {
+                first_name: fname,
+                last_name: lname,
     			role: role,
                 password : password,
     			orderHistory : [],

@@ -1,4 +1,7 @@
 <template name = "userDash">
+<h2>Welcome : {{currentUser.profile.first_name}} . {{currentUser.profile.last_name}}</h2><br>
+<h4>Role: {{currentUser.profile.role}}</h4>
+Edit your Profile <a href="{{pathFor 'editUser'}}">here</a><br><br>
 You Older History:
 <table width="100%">
 

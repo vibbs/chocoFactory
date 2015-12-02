@@ -6,9 +6,20 @@ Template.login.events({
 			if (error) { //Show user why he can't log in
 				Session.set('errors', error.reason);
 			}else{// Head to homepage
-				Router.go('surveyList');
+				document.getElementById("sign-out").innerHTML = "Signout";
+				Router.go('userDash');
 			}
 		});
+	},
+	'click .fpass' : function(event, template){
+		var email = prompt("Enter Registered Email :\n'");
+
+		
+		if (email!="") {
+			alert("Reset link sent to : " +email);
+		}else{
+			alert("Invalid Email address!");
+		}
 	}
 });
 

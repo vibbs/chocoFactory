@@ -19,7 +19,7 @@ Template.supplyOrder.events({
 
 Template.eso.helpers({
 	rec : function(){
-		return this.recieved ? 'true' : 'false';
+		return this.recieved ? 'Recieved' : 'Not-Recieved';
 	}
 });
 
