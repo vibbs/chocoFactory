@@ -1,51 +1,25 @@
 <template name = "orderSch" >
-<h2>Order History</h2>
 
-
+<h3>Order Histories</h3>
 <table width="100%" class="table table-striped">
-<tbody>
-<tr>
-	<td>Name</td>
-	<td>QtyNeeded</td>
-	<td>Special Note</td>
-	<td>Date</td>
-	
-</tr>
+	<tbody>
+		<tr>
+			<td><b>Order ID:</b></td>
+			<td>--</td>
+			<td><b>Date:</b></td>
+		</tr>
 
 {{#each orders}}
-	{{ > eachOrder2}}
+<tr>
+
+	<td>{{this._id}}</td>
+	<td>----</td>
+	<td>{{this.date}}</td>
+	</tr>
 {{/each}}
 
-</tbody>
+	</tbody>
 </table>
-
 </template>
 
 
-<template name = "eachOrder2">
-<tr>
-<td>(Order ID :: {{_id}} )</td>
-	<td>---</td>
-	<td>---</td>
-	
-	<td>{{date}}</td>
-	
-</tr>
-	{{#each products}}
- 		{{> eachproduct2}}
- {{/each}}
-</template>
-
-
-<template name = "eachproduct2">
-
-
-	<tr>
-	<td>{{nam}}</td>
-	<td>{{qty}}</td>
-	<td>{{note}}</td>
-
-	</tr>
-
-
-</template>

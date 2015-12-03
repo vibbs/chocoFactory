@@ -47,7 +47,6 @@ Template.eachProduct2.helpers({
 			var obj  = Products.findOne({_id : this.productID});
 		return obj.prize;
 	}
-	
 
 });
 
@@ -57,11 +56,7 @@ Template.eachorder2.helpers({
 	},
 	done : function(){
 		 var order = Order.findOne({_id :this.ID });
-		return order.done  ?  "Prepared" : "In-Preparation";
-	},
-	custom : function(){
-		 var order = Order.findOne({_id :this.ID });
-		return order.custom  ?  true : false;
+		return order.done  ?  "true" : "false";
 	},
 	products :function(){
         //need to display the products in the current order 
@@ -89,23 +84,9 @@ Template.eachorder2.helpers({
         
         console.log(ret);
         return ret;
-    },
-    cust : function(){
-    	var truth = [];
-    	var count = 0;
-    	var order = Order.findOne({_id :this.ID });
 
-        prods = order.productOrder;
 
-        for (var i = 0; i < prods.length; i++) {
-		   
-		    
-		    if(prods[i][3]) count++;
-		}
-
-		return count >0 ? true :false;
-
-	}
+    }
 
 });
 
