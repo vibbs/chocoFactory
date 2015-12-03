@@ -75,6 +75,8 @@ Template.checkOut.events({
 		alert("OrderID:" + Session.get("orderID") + "  Has beed Placed! Thank you.");
 
 		Session.set("orderID", null);
+
+		Router.go('userDash');
 		
 	}
 

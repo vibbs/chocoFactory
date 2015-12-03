@@ -84,7 +84,12 @@ Template.mainLayout.events({
 	},
 	"click #sign-out" : function () {
 
-		document.getElementById("sign-out").innerHTML = "Login";
+		if(Meteor.user()){
+			document.getElementById("sign-out").innerHTML = "SignOut";
+		}else{
+			document.getElementById("sign-out").innerHTML = "Login";
+		}
+		
 		
 
 		Meteor.logout();

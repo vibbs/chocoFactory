@@ -12,7 +12,7 @@ Template.login.events({
 		});
 	},
 	'click .fpass' : function(event, template){
-		var email = prompt("Enter Registered Email :\n'");
+		var email = prompt("Enter Registered Email :\n");
 
 		
 		if (email!="") {

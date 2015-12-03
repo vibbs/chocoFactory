@@ -42,13 +42,15 @@ Template.addUser.events({
        // console.log(Meteor.call('isValidEmailAddress', email));
 
 
-        if((email == null||email == "")
-            &&(password == null||password == "")) { 
-                if(pattern.test(email)){  
+        if((email != null||email != "")
+            &&(password != null||password != "")
+                &&(pattern.test(email)))  
+                {  
         Accounts.createUser({
     		email: email,
     		password: password,
     		profile : {
+                email : email,
                 first_name: fname,
                 last_name: lname,
     			role: role,
@@ -61,13 +63,13 @@ Template.addUser.events({
 		Meteor.logout();
 
 		Meteor.loginWithPassword('admin@test.com', 'admin123');
-
+        document.getElementById("sign-out").innerHTML = "Signout";
+        
+        Router.go('addUser');
         }else{
-             alert("Input fields cannot be blank!");
+             alert("Input fields cannot be blank! OR Invalid email!");
         }
-        }else{
-           alert("Invalid email!");
-        }
+        
     
         //Router.go('home');
 	}

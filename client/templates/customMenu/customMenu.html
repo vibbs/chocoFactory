@@ -21,8 +21,10 @@
 <template name = "item">
 		<td> {{name}} </td>
 		<td> {{prize}} </td>
+		{{#if currentUser}}
 		<td><input type="text" class="qty"> </td>
 		<td><input type="text" class="desc"> </td>
 		<td><button class="shop">Shop</button> <br></td>
+		{{/if}}
 
 </template>

@@ -3,9 +3,10 @@
 <div class = "col-md-12">
 {{#each products}}
 		<div class = "col-md-3" >{{> thisProd}}</div>
-		<div class = "col-md-1"></div>
 {{/each}}
 </div>
+
+<div class = "col-md-12 pad2"></div>
 
 <div class = "col-md-12"></div>
 
@@ -22,16 +23,17 @@
 	<br>
 	{{#if media_file_id}}
 		
-		
-		 <a href="{{media_file_id.url}}" target="_blank"><img src="{{media_file_id.url}}" alt="" class="thumbnail" style="width:150px;height:200px;"/></a>
+		<div style="vertical-align: center;">
+		 <a href="{{media_file_id.url}}" target="_blank"><img src="{{media_file_id.url}}" alt="" class="thumbnail" style="width:150px;height:200px; " /></a>
 		 
-	
+	</div>
 
 		{{/if}}
 
 
 </div>
-</button>
 
+</button>
+<div class = "col-md-12 pad2"></div>
 
 </template>

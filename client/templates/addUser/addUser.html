@@ -1,20 +1,5 @@
 <template name = "addUser" > 
-List Of all the registered users : <br>
-<table width="50%">
-<tr>
-	<td>Username Or emailID :</td>
-	<td>Role :</td>
-	<td>First Name :</td>
-	<td>Last Name :</td>
-</tr>
-
-{{#each Users}}
-	{{> allusers}}
-{{/each}}
-
-</table>
-<br>
-
+<h3>Add Users:</h3><br>
 	First Name:	<input type="text" id="fname-register" value=""/>
 	Last Name:<input type="text" id="lname-register" value="" autocomplete="off"/>
 
@@ -29,26 +14,61 @@ List Of all the registered users : <br>
 	</select>
 
 
-	<button class="submitUser">AddUser</button>
+	<button class="submitUser">AddUser</button><br>
+
+
+
+<h3>List of all the registered users :</h3> <br>
+<table width="50%" class="table table-bordered">
+<tbody>
+<tr>
+	<td>Username Or emailID :</td>
+	<td>Role :</td>
+	<td>First Name :</td>
+	<td>Last Name :</td>
+</tr>
+
+{{#each Users}}
+	{{> allusers}}
+{{/each}}
+</tbody>
+</table>
+<br>
+
 
 </template>
 
 
 <template name = "allusers" > 
 <tr>
-{{#if isAdmin}}
-{{#each emails}}
-		{{ > allemails}}
-{{/each}}		
+{{#if profile.email}}
+	<td>{{profile.email}}</td>
+{{else}}
+<td>--</td>
 {{/if}}
-<td>{{profile.role}}</td>
-<td>{{profile.role}}</td>
+
+	{{#if profile.role}}
 	<td>{{profile.role}}</td>
+	{{else}}
+	<td>--</td>
+	{{/if}}
+
+{{#if profile.first_name}}
+	<td>{{profile.first_name}}</td>
+	{{else}}
+	<td>--</td>
+	{{/if}}
+
+{{#if profile.last_name}}
+	<td>{{profile.last_name}}</td>
+	{{else}}
+	<td>--</td>
+	{{/if}}
 
 	</tr>
 </template>
 
 <template name = "allemails" > 
 
-		<td>{{address}}</td>
+		
 </template>
