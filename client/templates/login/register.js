@@ -7,9 +7,16 @@ Template.register.events({
 		var fname = template.find("#fname-register").value;
 		var lname = template.find("#lname-register").value;
 		var password = template.find("#password-register").value;
+		var password2 = template.find("#password-register2").value;
 		var email = template.find("#email-register").value;
+		var address = template.find("#add").value;
+		var zipcode = template.find("#zip").value;
+		var phno = template.find("#phno").value;
 
 		//Add an account document to the user collection
+		if(password==password2){ 
+			if(email!=""&&address!=""&&zipcode!=""&&phno!=""&&fname!=""&&
+				lname!=""){  
 		Accounts.createUser({
 			email: email,
 			password: password,
@@ -20,7 +27,10 @@ Template.register.events({
 				role: "customer",
                 password : password,
     			orderHistory : [],
-    			currentOrder : null
+    			currentOrder : null,
+    			address : address,
+                zipcode :zipcode,
+                phno: phno
 			},
 		}, function(error) { // Catch any errors
 			if( error ) {
@@ -29,5 +39,12 @@ Template.register.events({
 		});
 
 		Router.go('/');
+		}else{
+			alert("Fields cannot be empty!");
+			this.next();
+		}
+		}else{
+			alert("Password Don't Match!");
+		}
 	},
 });

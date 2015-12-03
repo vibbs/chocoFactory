@@ -56,7 +56,11 @@ Template.addUser.events({
     			role: role,
                 password : password,
     			orderHistory : [],
-    			currentOrder : null
+    			currentOrder : null,
+                address : null,
+                zipcode :null,
+                phno: null
+
     		}
 		});
 

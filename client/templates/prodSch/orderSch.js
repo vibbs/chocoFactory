@@ -1,33 +1,17 @@
-Template.prodSch.helpers({
+Template.orderSch.helpers({
 	orders : function  () {
-			var obj = Order.find().fetch();
-			console.log("obj123"+obj[0]);
-			console.log(obj[0]);
-			
-			for (var i = 0; i < obj.length; i++) {
-
-
-				if(i == 0){
-					Meteor.call('insertPS', obj[i]._id);
-				}
-				else{
-					Meteor.call('addOrderID', obj[i]._id);
-				}
-			}
-		var EO  = Production.findOne();
-		console.log(EO.orderID);
 		
-		return EO.orderID;
+		return Order.find().fetch();
 	}
 
 });
 
-Template.prodSch.events({
+Template.orderSch.events({
 
 });
 
 
-Template.eachProduct2.helpers({
+Template.eachproduct2.helpers({
 	nam : function(){
 		console.log(this.productID);
 		var obj  = Menu.findOne({_id : this.productID});
@@ -47,11 +31,10 @@ Template.eachProduct2.helpers({
 			var obj  = Products.findOne({_id : this.productID});
 		return obj.prize;
 	}
-	
 
 });
 
-Template.eachorder2.helpers({
+Template.eachOrder2.helpers({
 	orderID : function(){
 		return this.ID
 	},
@@ -59,16 +42,12 @@ Template.eachorder2.helpers({
 		 var order = Order.findOne({_id :this.ID });
 		return order.done  ?  "Prepared" : "In-Preparation";
 	},
-	custom : function(){
-		 var order = Order.findOne({_id :this.ID });
-		return order.custom  ?  true : false;
-	},
 	products :function(){
         //need to display the products in the current order 
         var prods = [];
         var ret = [];
 
-        var order = Order.findOne({_id :this.ID });
+        var order = Order.findOne({_id :this._id });
 
         prods = order.productOrder;
 
@@ -88,28 +67,21 @@ Template.eachorder2.helpers({
 		}
         
         console.log(ret);
+        console.log(order.date);
         return ret;
+
+
     },
-    cust : function(){
-    	var truth = [];
-    	var count = 0;
-    	var order = Order.findOne({_id :this.ID });
-
-        prods = order.productOrder;
-
-        for (var i = 0; i < prods.length; i++) {
-		   
-		    
-		    if(prods[i][3]) count++;
-		}
-
-		return count >0 ? true :false;
-
-	}
+    odate: function(){
+    		var order = Order.findOne({_id :this._id });
+    		console.log(order.date);
+    		return moment(order.date).format('MM-DD-YYYY');
+    }
+    
 
 });
 
-Template.eachorder2.events({
+Template.eachOrder2.events({
 	'click .status' : function(events, template){
 		var order = Order.findOne({_id :this.ID });
 		order.done  ?  Meteor.call('doneProductNot', this.ID) : Meteor.call('doneProduct', this.ID);
@@ -121,4 +93,9 @@ Template.eachorder2.events({
 		//Meteor.call('removeOrderID', this.ID);
 	}
 
+});
+
+
+Template.registerHelper('formatDate', function(date) {
+  return moment(date).format('MM-DD-YYYY');
 });

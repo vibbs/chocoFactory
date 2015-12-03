@@ -7,6 +7,10 @@ Template.editUser.events({
 
 		var fname = template.find("#fname").value;
 		var lname = template.find("#lname").value;
+		var address = template.find("#add").value;
+		var zipcode = template.find("#zip").value;
+		var phno = template.find("#phno").value;
+
 
 		if( Meteor.user() ) {
 				Meteor.users.update({_id: Meteor.userId()}, {
@@ -15,6 +19,9 @@ Template.editUser.events({
 						profile: {
 							first_name: fname,
 							last_name: lname,
+							address : address,
+			                zipcode :zipcode,
+			                phno: phno
 						}
 					}
 				});	

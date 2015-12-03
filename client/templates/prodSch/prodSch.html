@@ -10,7 +10,7 @@
 	<td>Name</td>
 	<td>QtyNeeded</td>
 	<td>Special Note</td>
-	<td>Done Processing</td>
+	<td>Status</td>
 	<td>Remove</td>
 </tr>
 
@@ -26,7 +26,9 @@
 
 <template name = "eachorder2">
 <tr>
+{{#if cust}}
 <td>(Order ID :: {{orderID}} )</td>
+{{/if}}
 	<td>---</td>
 	<td>---</td>
 	<td>{{done}}<button class="status">Change Status</button></td>
@@ -48,13 +50,7 @@
 	<td>{{note}}</td>
 
 	</tr>
-{{else}}
 
-	<tr>
-	<td>{{nam2}}</td>
-	<td>{{qty}}</td>
-	<td>{{note}}</td>
-	</tr>
 
 {{/if}}
 

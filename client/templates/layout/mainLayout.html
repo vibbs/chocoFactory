@@ -35,12 +35,17 @@
 
 		{{#if bool3}}
 			<li ><a href="{{pathFor 'viewProduct'}}"
-			class="{{isActiveRoute regex='viewProduct'}}">Edit-Products</a></li>
+			class="{{isActiveRoute regex='viewProduct'}}">Inventory</a></li>
 		{{/if}}	
 
 		{{#if bool4}}
 			<li ><a href="{{pathFor 'prodSch'}}"
 			class="{{isActiveRoute regex='prodSch'}}">ProductionSchedule</a></li>
+		{{/if}}	
+
+		{{#if bool4}}
+			<li ><a href="{{pathFor 'orderSch'}}"
+			class="{{isActiveRoute regex='orderSch'}}">All-Orders</a></li>
 		{{/if}}	
 
 		{{#if bool5}}
