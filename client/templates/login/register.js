@@ -14,6 +14,7 @@ Template.register.events({
 			email: email,
 			password: password,
 			profile: {
+				email: email,
 				first_name: fname,
 				last_name: lname,
 				role: "customer",

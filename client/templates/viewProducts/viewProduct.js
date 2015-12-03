@@ -61,6 +61,10 @@ Template.allProducts.events({
         Router.go('viewProduct');
 		
 
+	},
+	'click .delProd' : function(){
+		Meteor.call('removeProduct', this._id);
+		alert("Product Removed!");
 	}
 
 });

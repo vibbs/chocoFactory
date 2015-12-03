@@ -3,10 +3,19 @@
 	bottom: 0;
 	width: 100%;
 	height: 20px;
-	background-color: #A8A8A8;
+	background-color: #a8a8a8;
 	margin-bottom: 10px;
 
 
+}
+
+#logo{
+	padding-top: 20px;
+	padding: 5px;
+}
+.main-nav{
+
+	background-color: #4E2E28;
 }
 .logo{
 	float: left;
@@ -26,5 +35,6 @@
 	padding-top: 50px;
 }
 
-
-
+body{
+	background-color: #ffdc99; 
+}

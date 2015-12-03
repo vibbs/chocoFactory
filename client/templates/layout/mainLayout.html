@@ -6,7 +6,7 @@
 <div class="maintitle">
 
 
-<img height="100px" name="slide" src="images/logod.png" width="200px" />
+<img id = "logo" height="100px" name="slide" src="images/logod.png" width="150px" />
 
 </div>
 
@@ -25,17 +25,17 @@
 		
 		{{#if bool1}}
 			<li ><a href="{{pathFor 'addProduct'}}"
-				class="{{isActiveRoute regex='addProduct'}}">Add Product-Admin</a></li>
+				class="{{isActiveRoute regex='addProduct'}}">Add Product</a></li>
 		{{/if}}		
 
 		{{#if bool2}}
 			<li ><a href="{{pathFor 'addUser'}}"
-				class="{{isActiveRoute regex='addUser'}}">Users-Admin</a></li>
+				class="{{isActiveRoute regex='addUser'}}">Employee-Management</a></li>
 		{{/if}}		
 
 		{{#if bool3}}
 			<li ><a href="{{pathFor 'viewProduct'}}"
-			class="{{isActiveRoute regex='viewProduct'}}">Admin-ViewProducts</a></li>
+			class="{{isActiveRoute regex='viewProduct'}}">Edit-Products</a></li>
 		{{/if}}	
 
 		{{#if bool4}}
@@ -45,7 +45,7 @@
 
 		{{#if bool5}}
 			<li ><a href="{{pathFor 'supplyOrder'}}"
-			class="{{isActiveRoute regex='supplyOrder'}}">SupplyOrder-Manager</a></li>
+			class="{{isActiveRoute regex='supplyOrder'}}">SupplyOrder</a></li>
 		{{/if}}	
 
 		{{#if bool6}}
@@ -69,17 +69,22 @@
 			class="{{isActiveRoute regex='recipe'}}">Recipe</a></li>
 		{{/if}}	
 
-			<li><a id="sign-out" href="{{pathFor 'login'}}">Login</a></li>
+			{{#if currentUser}}
+			<li><a id="sign-out" href="{{pathFor 'login'}}"><b>SignOut</b></a></li>
+			{{else}}
+			<li><a id="sign-out" href="{{pathFor 'login'}}"><b>Login</b></a></li>
+			{{/if}}
 
 
 			
-
+			{{#if currentUser}}
 			<li><a href="{{pathFor 'checkOut'}}"
 			class="{{isActiveRoute regex='checkOut'}}">
-				<button class="cart"><i class="fa fa-shopping-bag fa-3x"></i>
+				<button class="cart"><img src="/images/cart.jpg" width="60px" height="50px"> 
 				</button></a>
 
 			</li>
+			{{/if}}
 
 		</ul>
 		

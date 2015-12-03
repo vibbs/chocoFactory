@@ -20,6 +20,9 @@ Template.login.events({
 		}else{
 			alert("Invalid Email address!");
 		}
+	},
+	'click .register' : function(event, template){
+		Router.go('register');
 	}
 });
 

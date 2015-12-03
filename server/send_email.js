@@ -17,4 +17,15 @@ Meteor.methods({
     }
 });
 
+Meteor.users.allow({
+  remove: function (userId, doc) {
+  	return (Meteor.user().emails[0].address == "admin@test.com") ? true : false;
+  },
+  update :function(){
+  	return (Meteor.user().emails[0].address == "admin@test.com") ? true : false;
+  }
+});
+
+
 }
+

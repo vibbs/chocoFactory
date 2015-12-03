@@ -72,7 +72,15 @@ Template.addUser.events({
         
     
         //Router.go('home');
-	}
+	},
+    'click .del' : function(event, template){
+
+        
+
+         Meteor.users.remove({ _id: this._id });
+
+       alert("User Removed");
+    }
 
 });
 

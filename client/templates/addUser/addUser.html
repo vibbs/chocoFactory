@@ -26,6 +26,7 @@
 	<td>Role :</td>
 	<td>First Name :</td>
 	<td>Last Name :</td>
+	<td>Remove</td>
 </tr>
 
 {{#each Users}}
@@ -64,6 +65,9 @@
 	{{else}}
 	<td>--</td>
 	{{/if}}
+
+	<td><button class="del"><i class="fa fa-times"></i>
+</button></td>
 
 	</tr>
 </template>

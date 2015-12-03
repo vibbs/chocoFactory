@@ -1,11 +1,20 @@
 <template name = "customMenu">
+{{#if currentUser}}
+{{else}}
+<a href="{{pathFor 'login'}}">Login</a> to order these ! 
+{{/if}}
+
+
 <table style="width:100%">
+
 <tr>
 	<td>Name</td>
 	<td>Prize</td>
+	{{#if currentUser}}
 	<td>QtyNeeded</td>
 	<td>Special Note</td>
 	<td>Click to Order</td>
+	{{/if}}
 </tr>
 
 {{#each menuItem}}
